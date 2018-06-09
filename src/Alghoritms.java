@@ -36,4 +36,17 @@ public class Alghoritms {
         else if (val<0) return -1;
         return val*recursiveFac(val-1);
     }
+
+    int iterateFibonacci(int n) {
+        if (n <= 1) return n;
+        else return iterateFibonacci(n-1) + iterateFibonacci(n-2);
+    }
+
+    int iterateStrong(int i)
+    {
+        if (i < 1)
+            return 1;
+        else
+            return i * iterateStrong(i - 1);
+    }
 }
