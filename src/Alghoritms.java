@@ -24,13 +24,15 @@ public class Alghoritms {
     }
 
     int recursiveFib(int val){
-        if (val<=2) return 1;
+        if (val==0) return 0;
+        else if(val<=2) return 1;
         else if(val<0) return -1;
         return recursiveFib(val-1)+recursiveFib(val-2);
     }
 
     int recursiveFac(int val){
-        if(val<2) return 1;
+        if(val==0) return 0;
+        else if(val<2) return 1;
         else if (val<0) return -1;
         return val*recursiveFac(val-1);
     }
