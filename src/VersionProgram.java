@@ -2,13 +2,28 @@
 public class VersionProgram {
 
     public static void main(String[] args) {
-    Alghoritms alg=new Alghoritms();
+    Algorithms alg=new Algorithms();
+    int val = -2;
+    int itResult, reResult, stResult, finalResult;
 
-    System.out.println("Rekurencyjny fibonacci: "+alg.recursiveFib(6));
-    System.out.println("Rekurencyjna silnia: "+alg.recursiveFac(10));
-    System.out.println("Iteracyjny fibonacci: "+alg. iterateFibonacci(6));
-    System.out.println("Iteracyna silnia: "+alg.iterateStrong(10));
-    System.out.println("Strumienie fibonacci: " + alg.streamFib(6));
-    System.out.println("Strumienie silnia: " + alg.streamFac(10));
+        System.out.println("Wartość argumentu: " + val);
+
+        itResult = alg.iterateFibonacci(val);
+        stResult = alg.streamFibonacci(val);
+        reResult = alg.recursiveFibonacci(val);
+
+        checkIfError(itResult, "iteracja");
+        checkIfError(stResult, "strumienie");
+        checkIfError(reResult, "rekurencyja");
+
+        finalResult = alg.vote(itResult, reResult, stResult);
+        checkIfError(finalResult, "głosowanie");
+    }
+
+    public static void checkIfError(int result, String message){
+        if(result < 0)
+            System.out.println("Błąd - " + message);
+        else
+            System.out.println(message + ": " +result);
     }
 }
